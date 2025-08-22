@@ -141,8 +141,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:3001",
     "http://192.168.2.81:3000",
     "http://192.168.2.81:3001",
-    "https://yourusername.github.io",  # Replace with your GitHub username
-    "https://yourusername.github.io/ai-resume-analyzer",  # Replace with your GitHub username
+    "https://neel2003gar.github.io",  # Your GitHub Pages domain
 ]
 
 CORS_ALLOW_CREDENTIALS = True

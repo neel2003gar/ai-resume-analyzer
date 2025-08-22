@@ -1,6 +1,14 @@
 # AI Resume Analyzer
 
+🚀 **Live Application**: [https://neel2003gar.github.io/ai-resume-analyzer](https://neel2003gar.github.io/ai-resume-analyzer)
+
 A powerful AI-driven resume analysis tool that provides ATS optimization, grammar checking, and detailed feedback to help improve your resume's performance.
+
+## 🌐 Deployment
+
+- **Frontend**: Deployed on GitHub Pages
+- **Backend**: Deployed on Render
+- **Status**: ✅ Live and operational
 
 ## ✨ Features
 
@@ -10,7 +18,8 @@ A powerful AI-driven resume analysis tool that provides ATS optimization, gramma
 - **🎯 Smart Suggestions**: Actionable recommendations for improvement
 - **💼 Skills Extraction**: Automatic identification and categorization
 - **📱 Modern UI**: Beautiful, responsive interface built with Next.js and Tailwind CSS
-- **� Auto Cleanup**: Automatic file cleanup system for storage management
+- **📄 PDF Export**: Professional PDF reports with enhanced styling
+- **🔄 Auto Cleanup**: Automatic file cleanup system for storage management
 - **📱 Mobile Optimized**: Enhanced mobile upload and analysis experience
 
 ## 🚀 Quick Start
@@ -98,17 +107,36 @@ The frontend will be available at `http://localhost:3000`
 
 ## 📁 Project Structure
 
-```
+```text
 ai-resume-analyzer/
-├── backend/
-│   ├── app/
-│   │   ├── models/          # Database models
-│   │   ├── services/        # Business logic
-│   │   │   ├── parser.py    # Resume parsing
-│   │   │   ├── analyzer.py  # AI analysis
-│   │   │   └── grammar.py   # Grammar checking
-│   │   ├── database.py      # Database setup
-│   │   └── schemas.py       # Pydantic models
+├── backend/                     # Django REST API
+│   ├── resume_analyzer/         # Project settings
+│   │   ├── settings.py          # Django configuration
+│   │   ├── urls.py              # URL routing
+│   │   └── wsgi.py              # WSGI application
+│   ├── resumes/                 # Main app
+│   │   ├── models.py            # Database models
+│   │   ├── views.py             # API endpoints
+│   │   ├── serializers.py       # Data serialization
+│   │   └── urls.py              # App URLs
+│   ├── requirements.txt         # Python dependencies
+│   ├── build.sh                 # Render build script
+│   └── Procfile                 # Render process file
+├── frontend/                    # Next.js application
+│   ├── src/
+│   │   ├── app/                 # App router pages
+│   │   ├── components/          # React components
+│   │   ├── lib/                 # Utility functions
+│   │   │   ├── api.ts           # API client
+│   │   │   └── utils.ts         # Helper functions
+│   │   └── types/               # TypeScript types
+│   ├── next.config.js           # Next.js configuration
+│   └── package.json             # Node dependencies
+├── .github/
+│   └── workflows/
+│       └── deploy.yml           # GitHub Actions workflow
+└── README.md                    # Project documentation
+```
 │   ├── uploads/             # Uploaded files
 │   ├── main.py             # FastAPI app
 │   ├── requirements.txt    # Python dependencies
@@ -123,19 +151,44 @@ ai-resume-analyzer/
     └── tailwind.config.js  # Tailwind configuration
 ```
 
-## 🔧 API Endpoints
+## � Deployment
+
+### Live Application
+- **Frontend**: [https://neel2003gar.github.io/ai-resume-analyzer](https://neel2003gar.github.io/ai-resume-analyzer)
+- **Backend API**: [https://ai-resume-analyzer-backend-01nz.onrender.com](https://ai-resume-analyzer-backend-01nz.onrender.com)
+
+### Architecture
+- **Frontend**: Next.js static site deployed on GitHub Pages
+- **Backend**: Django REST API deployed on Render
+- **Database**: PostgreSQL on Render
+- **CI/CD**: GitHub Actions for automatic deployment
+
+### Frontend Deployment (GitHub Pages)
+1. Code pushed to `main` branch
+2. GitHub Actions builds Next.js application
+3. Static files deployed to `gh-pages` branch
+4. Available at GitHub Pages URL
+
+### Backend Deployment (Render)
+1. Connected to GitHub repository
+2. Automatic builds on code changes
+3. Environment variables configured
+4. Gunicorn WSGI server
+5. PostgreSQL database provisioned
+
+## �🔧 API Endpoints
 
 ### Resume Analysis
 
-- `POST /upload` - Upload and analyze resume
-- `GET /resumes` - List all analyzed resumes
-- `GET /resumes/{id}` - Get specific resume analysis
-- `POST /resumes/{id}/reanalyze` - Reanalyze with new job description
-- `DELETE /resumes/{id}` - Delete resume and analysis
+- `POST /api/analyze/` - Upload and analyze resume
+- `GET /api/resumes/` - List all analyzed resumes
+- `GET /api/resumes/{id}/` - Get specific resume analysis
+- `POST /api/resumes/{id}/reanalyze/` - Reanalyze with new job description
+- `DELETE /api/resumes/{id}/` - Delete resume and analysis
 
 ### Utility
 
-- `GET /health` - Health check
+- `GET /api/health/` - Health check endpoint
 
 ## 🎯 How It Works
 

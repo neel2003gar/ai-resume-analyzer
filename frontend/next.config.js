@@ -11,7 +11,7 @@ const nextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/ai-resume-analyzer' : '',
   env: {
     NEXT_PUBLIC_API_URL: process.env.NODE_ENV === 'production' 
-      ? 'https://ai-resume-analyzer-backend.onrender.com' 
+      ? 'https://ai-resume-analyzer-backend-01nz.onrender.com' 
       : process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000',
   },
 };

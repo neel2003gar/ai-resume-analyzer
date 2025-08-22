@@ -1,0 +1,35 @@
+# Django Framework
+Django==5.2.5
+
+# Django REST Framework for API endpoints
+djangorestframework==3.15.2
+
+# CORS handling for frontend communication
+django-cors-headers==4.4.0
+
+# PDF processing
+PyPDF2==3.0.1
+
+# Word document processing
+python-docx==1.1.2
+
+# Environment variable management
+python-decouple==3.8
+python-dotenv==1.0.1
+
+# Production web server
+gunicorn==21.2.0
+
+# Additional dependencies that might be useful
+# For better date/time handling
+pytz==2024.2
+
+# For JSON handling (though json is built-in)
+# jsonschema==4.23.0
+
+# Production server (optional for deployment)
+# gunicorn==23.0.0
+
+# Development tools (optional)
+# django-extensions==3.2.3
+# django-debug-toolbar==4.4.6
